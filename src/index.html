@@ -1,13 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Dashboard</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>Metronic</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" />
+    <meta property="og:site_name" content="Keenthemes | Metronic" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"
+    />
+    <link rel="stylesheet" href="./assets/datatables.bundle.css">
+    <link rel="stylesheet" href="./assets/plugins.bundle.css">
+    <link rel="stylesheet" href="./assets/style.bundle.css">
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-5FS8GGP");
+    </script>
+  </head>
+  <body
+  >
+  <script>
+    var defaultThemeMode = "light";
+    var themeMode;
+    if (document.documentElement) {
+      if (document.documentElement.hasAttribute("data-theme-mode")) {
+        themeMode = document.documentElement.getAttribute("data-theme-mode");
+      } else {
+        if (localStorage.getItem("data-theme") !== null) {
+          themeMode = localStorage.getItem("data-theme");
+        } else {
+          themeMode = defaultThemeMode;
+        }
+      }
+      if (themeMode === "system") {
+        themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+          ? "dark"
+          : "light";
+      }
+      document.documentElement.setAttribute("data-theme", themeMode);
+    }
+  </script>
+    <app-root></app-root>
+   
+    
+    <script src="./assets/plugins.bundle.js"></script>
+		<script src="./assets/scripts.bundle.js"></script>
+		<script src="./assets/datatables.bundle.js"></script>
+		<script src="./assets/listing.js"></script>
+		<script src="./assets/listing_add.js"></script>
+		<script src="./assets/export.js"></script>
+		<script src="./assets/widgets.bundle.js"></script>
+		<script src="./assets/custom_widgets.js"></script>
+		<script src="./assets/chat.js"></script>
+		<script src="./assets/modals_upgrade-plan.js"></script>
+		<script src="./assets/modals_create-app.js"></script>
+		<script src="./assets/modals_users-search.js"></script>
+	</body>
 </html>
